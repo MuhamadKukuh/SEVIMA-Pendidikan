@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ClientController;
+use App\Models\Subject;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,12 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('Clients.Index');
-});
+// Route::get('/', function () {
+//     return view('Clients.Index', [
+//         "subjects" => Subject::all()
+//     ]);
+// });
+Route::resource('/', ClientController::class);
+Route::get('/materi', [ClientController::class, 'showMaterials']);
+
+// Route::prefix('/')->group(function(){
+// });
 
 Route::prefix('dashboard')->group(function(){
     Route::get('/', function(){
-        return view('Admin.Index');
+        return view('Admin.Index', );
     });
 });
