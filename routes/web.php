@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AuthenticateController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\MateriController;
+use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,10 +34,9 @@ Route::group(['middleware' => "auth"], function(){
     Route::get('/logout', [AuthenticateController::class, 'logout'])->name('logout');
 
     Route::group(["middleware" => "teacher"], function(){
-        Route::prefix('dashboard')->group(function(){
-            Route::get('/', function(){
-                return view('Admin.Index', );
-            });
+        Route::get('/dashboard', [TeacherController::class, 'index']);
+        Route::prefix('materi-data')->group(function(){
+            Route::resource('/', MateriController::class);
         });
     });
 });
