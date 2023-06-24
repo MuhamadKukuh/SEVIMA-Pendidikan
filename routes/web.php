@@ -21,7 +21,8 @@ use Illuminate\Support\Facades\Route;
 //     ]);
 // });
 Route::resource('/', ClientController::class);
-Route::get('/materi', [ClientController::class, 'showMaterials']);
+Route::get('/materi', [ClientController::class, 'MaterialsIndex']);
+Route::get('/materi/{material:material_title}', [ClientController::class, 'ShowMaterial'])->name('showMaterial');
 
 // Route::prefix('/')->group(function(){
 // });

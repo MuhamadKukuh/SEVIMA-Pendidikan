@@ -25,7 +25,7 @@ class Teacher extends Model
     }
 
     public function ProgramStudy(){
-        return $this->belongsTo(ProgramStudy::class, 'program_id');
+        return $this->belongsTo(StudyProgram::class, 'program_id');
     }
 
 }
