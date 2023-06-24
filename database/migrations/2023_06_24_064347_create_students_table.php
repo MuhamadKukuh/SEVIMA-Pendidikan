@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id('student_id');
             $table->char('nik', 12)->unique();
             $table->char('nis', 12)->unique();
-            $table->char('phone_number', 14)->unique();
             $table->string('full_name', 200);
             $table->string('address');
             $table->foreignId('user_id');
