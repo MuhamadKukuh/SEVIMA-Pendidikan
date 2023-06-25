@@ -166,7 +166,7 @@
                     @foreach ($new_users as $user)
                     <li>
                         <img src="dist/img/user1-128x128.jpg" alt="User Image">
-                        <a class="users-list-name" href="#">{{ $user->Student->full_name }}</a>
+                        <a class="users-list-name" href="#">{{ $user->Student->full_name ?? 'Bug Seeder' }}</a>
                         <span class="users-list-date">Hari Ini</span>
                     </li>
                     @endforeach

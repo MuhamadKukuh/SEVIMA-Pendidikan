@@ -50,7 +50,7 @@
 
         <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="{{ route('showMaterial', $material->material_title) }}">
-                <img class="rounded-t-lg" src="{{ asset('/images/icons.png') }}" alt="" />
+                <img class="rounded-t-lg" src="{{ !$material->material_cover ? asset('/web_images/icons.png') : asset($material->material_cover) }}" alt="" />
                 <div class="w-full px-5 py-2 text-white font-semi-bold bg-blue-500" style="border-radius: 0 0 65% 0">{{ $material->Subject->subject }}</div>
                 <div class="px-5 py-2">
                     <a href="#">
@@ -63,6 +63,7 @@
 
         @endforeach
     </div>
+    {{ $materials->links() }}
 </section>
 
 @endsection

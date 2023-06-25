@@ -34,6 +34,13 @@
 <script src="{{ asset('/plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
 <script src="{{ asset('/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
 <script src="{{ asset('/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
+<script src="{{ asset('/plugins/summernote/summernote-bs4.min.js') }}"></script>
+<script src="{{ asset('/plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
+<script>
+    $(function () {
+      bsCustomFileInput.init();
+    });
+</script>
 
 <script>
     $(function () {
@@ -51,4 +58,16 @@
         "responsive": true,
       });
     });
-  </script>
+</script>
+<script>
+    $(function () {
+      // Summernote
+      $('#summernote').summernote()
+  
+      // CodeMirror
+      CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+        mode: "htmlmixed",
+        theme: "monokai"
+      });
+    })
+</script>

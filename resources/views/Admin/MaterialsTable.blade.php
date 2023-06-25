@@ -4,7 +4,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">DataTable with default features</h3>
+                <a href="{{ route('materiCreate') }}" class="btn btn-dark " style="font-weight: bold">+ Tambah Data</a>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -27,13 +27,13 @@
                             <td class="d-flex justify-content-center">
                                 <div class="row">
                                     <div class="col-4">
-                                        <button class="btn btn-primary">Detail</button>
+                                        <a href="/materi-data/{{ $material->material_id }}" class="btn btn-primary">Detail</a>
                                     </div>
                                     <div class="col-4">
-                                        <button class="btn btn-primary">Detail</button>
+                                        <a href="{{ route('materiEdit', $material->material_id) }}" class="btn btn-warning">Ubah</a>
                                     </div>
                                     <div class="col-4">
-                                        <button class="btn btn-primary">Detail</button>
+                                        <a href="/materi-data/{{ $material->material_id }}/delete" class="btn btn-danger">Hapus</a>
                                     </div>
                                 </div>
                             </td>

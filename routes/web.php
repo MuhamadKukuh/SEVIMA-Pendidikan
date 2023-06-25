@@ -36,7 +36,14 @@ Route::group(['middleware' => "auth"], function(){
     Route::group(["middleware" => "teacher"], function(){
         Route::get('/dashboard', [TeacherController::class, 'index']);
         Route::prefix('materi-data')->group(function(){
-            Route::resource('/', MateriController::class);
+            Route::resource('/', MateriController::class)->names([
+                'create' => "materiCreate",
+                'store'  => "materiStore",
+            ]);
+            Route::get('/edit/{id}', [MateriController::class, 'edit'])->name('materiEdit');
+            Route::post('/update/{id}', [MateriController::class, 'update'])->name('materialUpdate');
+            Route::get('/{id}', [MateriController::class, 'show'])->name('materiShow');
+            Route::get('/{id}/delete', [MateriController::class, 'destroy'])->name('materiDelete');
         });
     });
 });

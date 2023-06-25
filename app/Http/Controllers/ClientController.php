@@ -15,7 +15,6 @@ class ClientController extends Controller
     public function index()
     {
         $data['subjects'] = Subject::all();
-        $data['materials'] = LearningMaterial::paginate(20);
         $data['latest_materials'] = LearningMaterial::orderBy('created_at')->paginate(20);
 
         return view('Clients.Index', $data);

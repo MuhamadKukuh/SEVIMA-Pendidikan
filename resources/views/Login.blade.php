@@ -11,7 +11,7 @@
 
 <body class="bg-gray-100">
     <section class="h-screen">
-        <div class="flex h-full justify-center items-center mt-[100px]">
+        <div class="flex h-full justify-center items-center ">
             <div
                 class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
                 <form class="space-y-6" action="{{ route('loginProccess') }}" method="POST">
